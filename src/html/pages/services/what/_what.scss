@@ -1,0 +1,175 @@
+@use '../../../../styles/mixins' as *;
+
+.what {
+  position: relative;
+  width: 100%;
+  padding: 100px;
+  .container {
+    height: auto;
+    display: block;
+  }
+
+  &_inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .title {
+      font-size: 24px;
+      color: var(--c-yellow);
+      text-transform: capitalize;
+      &--no-margin {
+        margin-bottom: 0;
+        line-height: 1; // Цей клас просто вимикає одну властивість
+    }
+    }
+}
+
+.grid {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  
+  
+  .what-list {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+  margin-top: -220px;
+  max-width: 1150px;
+  list-style: none;
+  box-sizing: border-box;
+}
+.what-text {
+    position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  min-width: 368px;
+  min-height: 70px;
+  background: white;
+  text-align: center;
+    justify-content: center;
+     &_title {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--c-dark);
+  }
+}
+.img {
+  position: relative;
+  z-index: 2;
+}
+}
+
+.whatcontent {
+    display: flex;
+        align-items: center;
+    justify-content: space-between;
+    padding-top: 120px;
+    gap: 85px;
+
+    .what_images{
+        position: relative;
+        margin-bottom: 30px;
+
+        &::after{
+        content: '';
+      position: absolute;
+      left: -190px;  // відносно wrapper, не картки
+      bottom: 80px;
+      width: 430px;
+      height: 430px;
+      background-color: var(--color-background);
+      z-index: -1;
+      border-radius: 50%;
+      }
+    }
+
+    .what_text{
+        padding-top: 30px;
+        font-size: 16px;
+        color: var(--c-gray);
+        max-width: 500px;
+    }
+.grow-bottom {
+  margin-top: 40px;
+
+  .what-bottom {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .what1-bottom,
+  .what2-bottom,
+  .what3-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; // іконка вгорі, текст внизу
+    padding: 30px 33px 30px; // більше падінгу знизу для тексту
+    min-height: 198px; // підбери під макет
+    border-radius: 6px;
+
+    .what-bottom_title {
+      font-size: 18px;
+      color: var(--c-white);
+      font-weight: 700;
+      margin-top: auto; // притискає текст донизу
+    }
+  }
+
+  .what1-bottom { background-color: var(--c-green); }
+  .what2-bottom { background-color: var(--c-lightgreen); }
+  .what3-bottom { background-color: var(--c-yellow); }
+
+  .img-iconbottom {
+    width: 85px;
+    height: 85px;
+  }
+}
+}
+    
+    
+.market-banner{
+    display: flex;
+    position: relative;
+  width: 100%;
+  min-height: 273px; // висота з макету
+  background-image: url('/src/assets/images/services/market-bottom.webp');
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+    .container{
+        justify-content: space-between;
+     .title {
+      font-size: 30px;
+      color: var(--c-yellow);
+      text-transform: capitalize;
+      line-height: 45px;
+      &--no-margin {
+        margin-bottom: 0;
+        line-height: 1; // Цей клас просто вимикає одну властивість
+    }
+    }
+    .about{
+        font-size: 40px;
+      color: var(--c-white);
+      text-transform: none;
+      letter-spacing: -3px;
+      line-height: 48px;
+    }
+}
+.btn{
+    background-color: var(--c-yellow);
+}
+}

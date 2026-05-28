@@ -1,0 +1,73 @@
+@use '../../../../styles/mixins' as *;
+
+.servfuture {
+
+  .container {
+    height: auto;
+    display: block;
+  }
+
+  &_inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .future-video {
+    position: relative;
+    width: 100%;
+  }
+
+  .video {
+    position: relative;
+    display: flex;
+    width: 100%;
+    aspect-ratio: 1900/690;
+    background-image: url('/src/assets/images/home/play-video.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    @include bg-cover;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease-in-out;
+
+    @include rmax($xl) {
+            height: auto;
+        }
+
+        &::after{
+content: '';
+position: absolute;
+width: 82px;
+height: 82px;
+inset: 0;
+left: 47%;
+top: 15%;
+margin: auto;
+@include mask-contain;
+mask-image: var(--icon-play);
+background-color: var(--c-white);
+transition: background-color 0.3s ease-in-out;
+        }
+
+
+        @include hover{
+
+            box-shadow: inset 0 0 1000px 0 rgba(0, 0, 0, 0.5);
+            &::after{
+                background-color: var(--c-green);    
+            }
+        }
+    }
+
+     .future-video_about {
+  position: absolute;
+  bottom: 18%;
+  left: 19%;
+  color: white;
+  font-size: 70px;
+  line-height: 84px;
+  max-width: 600px;
+  z-index: 1;
+}
+}

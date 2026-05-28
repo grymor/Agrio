@@ -1,0 +1,274 @@
+.posts {
+    padding-top: 120px;
+    padding-bottom: 120px;
+
+  .container {
+    height: auto;
+    // display: block;
+  }
+}
+
+.posts__inner {
+  display: grid;
+  grid-template-columns: 1fr 370px; // ліва колонка — пости, права — сайдбар
+  gap: 30px;
+  align-items: start;
+}
+
+.post-card {
+  position: relative;
+  max-width: 770px;
+  
+  &:not(:last-child) {
+  margin-bottom: 30px;
+  &::after {
+        content: "";
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        background-color: var(--color-border);
+      }
+      }
+}
+
+.post-date {
+  position: relative;
+  bottom: 50px;
+  left: 20px;
+  background: var(--c-green);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  z-index: 1;
+}
+
+
+.post-description {
+  font-size: 30px;
+    font-weight: 800;
+    color: var(--c-dark);
+}
+
+.post-text {
+    padding-top: 11px;
+        max-width: 740px;
+      font-size: 16px;
+      line-height: 30px;
+      color: var(--c-gray);
+    
+}
+
+.btn-post {
+    position: relative;
+right: 58px;
+    background: var(--c-white);
+    color: var(--c-dark);
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 40px;
+
+  &__btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    border: 1px solid var(--c-green);
+    background: transparent;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+
+    &:hover:not(:disabled) {
+      border-color: var(--c-gray); // ваш жовтий
+      color: var(--c-gray);
+    }
+
+    &.active {
+      background-color: var(--c-green);
+      border-color: var(--c-green);
+      color: #fff;
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: default;
+    }
+  }
+}
+
+
+.sidebar-widget-search {
+  margin-bottom: 30px;
+
+  .search-widget {
+    display: flex;
+    align-items: center;
+    background-color: var(--c-yellow);
+    border-radius: 10px;
+    padding: 13px 29px;
+    
+
+    .search-input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      font-size: 16px;
+      color: #fff;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.8);
+      }
+    }
+
+    .search-btn {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      color: #fff;
+      display: flex;
+      align-items: center;
+
+      &::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: var(--icon-search);
+    background-size: contain;
+    filter: brightness(0) invert(1); // робить іконку білою
+  }
+    }
+  }
+}
+
+.sidebar-widget {
+  background: #f9f7f2;
+  border-radius: 8px;
+  padding: 30px;
+  margin-bottom: 30px;
+
+  &__title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+}
+
+// Latest Posts
+.sidebar-posts {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &__item {
+    background: var(--color-accent);
+    border-radius: 8px;
+    padding: 12px;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+      background: var(--c-white);
+    }
+  }
+
+  &__link {
+    display: flex;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+
+    img {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 10px;
+      flex-shrink: 0;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__author {
+    font-size: 14px;
+    color: var(--c-gray);
+    display: flex;
+    align-items: center;
+    &::before{
+            content: "";
+            display: block;
+            width: 16px;
+            height: 16px;
+            background: var(--icon-profile);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+  
+  }
+
+  &__title {
+    max-width: 180px;
+    font-size: 14px;
+    font-weight: 800;
+  }
+}
+
+// Categories
+.sidebar-categories {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  a {
+    color: var(--c-gray);
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.2s;
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+}
+
+// Tags
+.sidebar-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  &__item {
+    border-radius: 10px;
+    padding: 5px 25px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    background: #fff;
+    color: var(--c-primary);
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+      background: var(--color-accent);
+      color: var(--c-dark);
+    }
+  }
+}

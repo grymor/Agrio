@@ -1,0 +1,112 @@
+.get{
+padding: 390px 0;
+z-index: 1;
+overflow: hidden;
+
+    &_inner{
+        display: flex;
+        align-items: center;
+    justify-content: space-between;
+    gap: 150px;
+    }
+
+    .title {
+      font-size: 24px;
+      color: var(--c-yellow);
+      text-transform: capitalize;
+      &--no-margin {
+        margin-bottom: 0;
+        line-height: 1; // Цей клас просто вимикає одну властивість
+    }
+    }
+}
+
+.get_images{
+    position: relative;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  &::after{
+        content: '';
+      position: absolute;
+      left: -50px;  // відносно wrapper, не картки
+      bottom: 320px;
+      width: 100px;
+      height: 100px;
+      background-color: var(--c-lightgreen);
+      pointer-events: none;
+      z-index: -1;
+      border-radius: 8px;
+      }
+}
+
+.get_image-wrapper--main {
+  width: 450px;           // Бажаний розмір
+  height: 600px;    // Робимо ідеальне коло
+  overflow: hidden;       // Ховаємо все, що виступає за межі кола
+  position: relative;
+
+  .get_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    // Картинка заповнить коло, не втрачаючи пропорцій
+  }
+}
+
+// Маленьке коло з помідорами (те, що накладається)
+.get_image-wrapper--small {
+  width: 290px;
+  height: 320px;
+  overflow: hidden;
+  
+  position: absolute;      // Ставимо поверх великого кола
+  bottom: 50px;            // Зміщуємо вниз
+  left: -120px;            // Зміщуємо, щоб воно "виглядало" збоку
+  
+  .get_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+}
+
+
+.get_description{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    max-width: 552px;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 700;
+    color: var(--c-green);
+}
+
+.get_text{
+    max-width: 526px;
+    font-size: 16px;
+    line-height: 30px;
+    margin-bottom: 38px;
+    color: var(--c-gray);
+}
+
+.get-bottom{
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    &::before{
+            content: "";
+            display: block;
+            width: 16px;
+            height: 16px;
+            background: var(--icon-check2);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+}

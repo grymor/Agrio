@@ -1,0 +1,204 @@
+@use "../../../styles/mixins/" as *;
+
+.header{
+  background-color: #fff;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  
+&.scrolled {
+    background-color: #fff; // або ваш колір
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.header-top {
+  height: 195px;
+  
+  // Верхня частина з лого та контактами
+  &_inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 23px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+}
+
+  // Контактна інформація (список)
+  .contact-info {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+
+      // Розділювач між блоками
+      &:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        right: -20px;
+        top: 0;
+        height: 100%;
+        width: 1px;
+        background-color: var(--color-border);
+      }
+    }
+
+    &_text {
+      margin-left: 40px;
+      font-size: 12px;
+      color: var(--color-gray);
+      position: inherit;
+    }
+
+    &_link {
+      text-decoration: none;
+      color: var(--color-dark);
+      font-weight: 700;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      // Стилізація іконок через маску
+
+    }
+  }
+
+
+//   .icon-phone::before {
+//   content: "";
+//   display: inline-block;
+//   width: 30px;
+//   height: 30px;
+//   background-image: var(--icon-phone);
+//   background-size: contain;
+//   background-repeat: no-repeat;
+// }
+
+// .icon-mail::before {
+//   content: "";
+//   display: inline-block;
+//   width: 30px;
+//   height: 30px;
+//   background-image: var(--icon-mail);
+//   background-size: contain;
+//   background-repeat: no-repeat;
+// }
+
+// .icon-location::before {
+//   content: "";
+//   display: inline-block;
+//   width: 40px;
+//   height: 40px;
+//   background-image: var(--icon-location);
+//   background-size: contain;
+//   background-repeat: no-repeat;
+// }
+
+
+
+
+
+    .container {
+      
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      height: 70px;
+    }
+
+  .menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+
+    &_link {
+      color: var(--color-dark);
+      font-weight: 600;
+      font-size: 15px;
+      transition: color 0.3s ease-in-out;
+
+      @include hover {
+        color: var(--color-green);
+      }
+    }
+  }
+
+  .header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  &:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        right: -20px;
+        top: 0;
+        height: 100%;
+        width: 1px;
+        background-color: var(--color-border);
+      }
+}
+
+.header-actions_search,
+.header-actions_cart-btn {
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* іконки */
+.header-actions_search {
+  background-image: var(--icon-search);
+}
+
+.header-actions_cart-btn {
+  background-image: var(--icon-cart);
+}
+
+.header-actions_cart {
+  position: relative;
+}
+
+.header-actions_cart-count {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  width: 18px;
+  height: 18px;
+  background-color: var(--color-green);
+  color: #fff;
+  font-size: 11px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-bottom {
+  display: flex;
+  background-color: #F8F7F0;
+    padding: 10px 0;
+    .container{
+      max-width: 1200px;
+      justify-content: space-between;
+    }
+
+}

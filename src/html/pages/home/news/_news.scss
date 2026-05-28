@@ -1,0 +1,125 @@
+@use '../../../../styles/mixins' as *;
+
+.news {
+  margin-bottom: 120px;
+  &_inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+}
+
+.grid {
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.news-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+  max-width: 1150px;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+.news-item {
+  position: relative;
+  box-shadow: 0 0px 12px rgba(0,0,0,0.08);
+  isolation: isolate; 
+}
+
+// Обгортка картинки — overflow: hidden тільки тут
+.news-image-wrap {
+  position: relative;
+  
+  
+
+  img {
+    width: 100% ;
+    height: 370px ;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+}
+
+// Бейдж виступає знизу картинки
+.date {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(50%);
+  background: var(--c-green);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+.news-text {
+  padding: 44px 46px 41px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.news-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: var(--c-gray);
+
+  
+
+  .author {
+    display: flex;
+    align-items: center;
+    &::before{
+            content: "";
+            display: block;
+            width: 16px;
+            height: 16px;
+            background: var(--icon-profile);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+  }
+
+  .comments {
+    display: flex;
+    align-items: center;
+    &::before{
+            content: "";
+            display: block;
+            width: 16px;
+            height: 16px;
+            background: var(--icon-comment);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+  }
+}
+
+.news-prod {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 800;
+  margin: 0;
+  line-height: 36px;
+}
+
+.cta-banner {
+  background-color: var(--color-background); // або який колір тобі треба з макету
+  padding: 80px 0;
+}

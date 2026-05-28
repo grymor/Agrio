@@ -1,0 +1,136 @@
+@use '../../../../styles/mixins'as*;
+.services {
+  overflow: visible;
+  position: relative;
+  width: 100%;
+  padding: 115px;
+  .container {
+    height: auto;
+    display: block;
+  }
+
+  &_inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  
+}
+
+
+
+/* Заголовок */
+.offer {
+  text-align: center;
+  margin-bottom: 60px;
+
+  .title {
+    font-size: 24px;
+    color: var(--c-yellow);
+    text-transform: capitalize;
+    &--no-margin {
+        margin-bottom: 0;
+        line-height: 1; // Цей клас просто вимикає одну властивість
+    }
+  }
+}
+
+/* GRID */
+.serv-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  width: 100%;
+  padding-bottom: 60px;
+  
+  // margin-bottom: -250px;
+}
+
+/* КАРТИНКА */
+.serv-item img {
+  width: 270px;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+  
+}
+
+
+/* КАРТКА */
+.serv-item {
+  position: relative;
+  
+  .card-info {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0px 12px rgba(0,0,0,0.08);
+  bottom: -45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 12px;
+  text-align: center;
+  min-width: 220px;
+    min-height: 130px;
+    padding: 30px 15px 12px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .card-icon {
+      position: absolute;
+      top: 0; // Прив'язуємо до ВЕРХНЬОГО краю .card-info
+      left: 50%;
+      transform: translate(-50%, -50%); 
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 70px;
+        height: 70px;
+        object-fit: contain; 
+      }
+    }
+  .about-prod{
+    display: block;
+    text-align: center;
+  max-width: 110px;
+            font-size: 20px;
+            line-height: 28px;
+            font-weight: 800;
+            color: var(--c-dark);
+  }
+  .card-btn {
+    font-size: 12px;
+    line-height: 36px;
+    min-width: 0;
+    min-height: 0;
+    width: 110px;
+    height: 46px;
+  position: absolute;
+  display: flex;
+  white-space: nowrap;
+  align-items: center;
+  text-align: center;
+  top: 70%;
+  left: 50%;
+    // translate(-50%, 50%) — центрикує і опускає кнопку на половину її висоти
+    transform: translate(-50%, 50%);
+}
+}
+
+}
+
+.serv-bottom {
+  position: relative;
+  width: 100%;
+  min-height: 234px; // висота з макету
+  background-image: url('/src/assets/images/services/firm-background.webp');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,41 @@
+@use '../../../../styles/mixins'as*;
+
+.feature {
+    z-index: 10;
+    padding-bottom: 120px;
+}
+.feature-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+.feature-item {
+    background-color: var(--c-white);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 
+    0 10px 20px rgba(0, 0, 0, 0.04),
+    0 6px 6px rgba(0, 0, 0, 0.03);
+}
+.feature-title {
+    font-size: 24px;
+    color: var(--c-yellow);
+    text-transform: capitalize;
+}
+.feature-description {
+    text-wrap: balance;
+    min-width: 194px;
+    min-height: 60px;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--c-dark);
+}
+
+.feature-icon {
+    display: flex;
+    justify-content: center;
+}

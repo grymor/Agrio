@@ -1,0 +1,51 @@
+ @use '../../../../styles/mixins' as *;
+ 
+ .tabs{
+    padding: 120px;
+
+ .container {
+    height: auto;
+    display: block;
+  }
+
+.tabs-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+
+  .tabs-list_item {
+    display: block;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0; // top/right/bottom/left: 0
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  @include hover {
+    &::after {
+      background-color: rgba(0, 0, 0, 0.5); // затемнення при наведенні
+    }
+  }
+  .tabs-list_caption{
+     position: absolute;
+  bottom: 50px;
+  left: 40px;
+  color: var(--c-white);
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 800;
+  max-width: 170px;
+  z-index: 2;
+  }
+}
+}
+
+
+}

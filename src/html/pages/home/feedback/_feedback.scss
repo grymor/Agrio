@@ -1,0 +1,228 @@
+@use '../../../../styles/mixins' as *;
+
+.feedback {
+  position: relative;
+  background-color: var(--color-background);
+  padding-block: 105px 127px;
+  overflow: visible;
+  min-height: 700px; // тут можна залишити, але знімаємо нижче де треба
+
+  &_inner {
+    display: grid;
+
+    grid-template-columns: 380px 1fr;
+    gap: 40px;
+    align-items: center; // змінено з start на center
+
+    @include rmax($xl) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .feedback-left {
+    .about { // твій h1
+    font-size: clamp(28px, 3vw, 42px); // адаптивний розмір
+    line-height: 1.2;
+    margin-top: 8px;
+  }
+    .title {
+      font-size: 24px;
+      color: var(--c-yellow);
+      text-transform: capitalize;
+
+      &--no-margin {
+        margin-bottom: 0;
+        line-height: 1;
+      }
+    }
+
+    .feedback-text {
+      max-width: 320px;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--c-gray);
+      margin-top: 20px;
+    }
+
+    .btn-group {
+      margin-top: 32px;
+    }
+  }
+
+  // Права колонка — обгортка слайдера з кнопками
+  .slider-with-nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .slider-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+
+  .slider-btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: var(--c-white);
+    border: 1.5px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+
+    &::before {
+      content: '';
+      height: 43px;
+      width: 31px;
+      mask-image: var(--icon-prev);
+      @include mask-contain;
+      background-color: currentColor;
+    }
+
+    &--prev::before {
+      transform: scaleY(-1);
+    }
+
+    &[disabled] {
+      color: #ccc;
+      pointer-events: none;
+    }
+
+    &:focus {
+      outline: 2px solid var(--c-gray);
+      outline-offset: 3px;
+    }
+
+    @include hover {
+      color: var(--c-gray);
+    }
+  }
+
+  .slider {
+    flex: 1;
+    min-width: 0;
+    height: 262px;
+    overflow: visible; // важливо — щоб ::before/::after карточки були видні
+
+    .swiper {
+      height: 100%;
+      background-color: transparent;
+      overflow: hidden;
+      border-radius: 4px;
+    }
+
+    .swiper-wrapper {
+      box-sizing: border-box !important;
+    }
+
+    .swiper-slide {
+      box-sizing: border-box !important;
+      height: auto;
+    }
+  }
+
+  .feedback-card {
+    background-color: #fff;
+    padding: 55px;
+    max-width: 720px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 45px;
+    position: relative;
+    overflow: visible;
+    border-radius: 4px;
+
+    // Декоративне пунктирне коло
+
+    .feedback-text {
+      max-width: 405px;
+      font-size: 15px;
+      line-height: 36px;
+      color: var(--c-gray);
+    }
+
+    &_footer {
+      display: flex;
+align-items: flex-start;
+flex-direction: row;
+justify-content: space-between;
+margin-top: 20px;
+
+
+.stars {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+
+  &__item {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background-color: #ddd;
+    mask-image: var(--icon-star);
+    mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+
+    &--filled {
+      background-color: var(--c-yellow); // заповнена зірка
+    }
+
+    &--half {
+      background: linear-gradient(90deg, var(--c-yellow) 50%, #ddd 50%); // половина
+    }
+  }
+}
+    }
+
+    &_title {
+      font-size: 18px;
+        font-weight: 800;
+    }
+
+    &_avatar-wrapper{
+      position: absolute;
+  right: 10px;
+  top: 55px;
+  width: 130px;
+  height: 130px;
+
+      &::before {
+  content: '';
+
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 2px dashed var(--c-yellow);
+      /* ДОДАЄМО ЦЕ: */
+    background-color: #F8F7F0; /* Твій колір зафарбовування */
+    box-shadow: inset 0 0 0 8px #fff;
+      pointer-events: none;
+      z-index: 1; /* Встановлюємо на найнижчий шар */
+}
+
+      &::after{
+        content: '';
+      position: absolute;
+      right: 39px;  // відносно wrapper, не картки
+      bottom: -20px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: var(--c-green);
+      pointer-events: none;
+      z-index: 2;
+      }
+    }
+
+    
+
+  }
+}

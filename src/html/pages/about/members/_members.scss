@@ -1,0 +1,92 @@
+@use '../../../../styles/mixins' as *;
+
+.members {
+
+  position: relative;
+  width: 100%;
+  padding: 100px;
+  // .container {
+  //   height: auto;
+  //   display: block;
+  // }
+
+  &_inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.grid {
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  
+  .members-list {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+  max-width: 1150px;
+  list-style: none;
+  box-sizing: border-box;
+}
+}
+
+.members-item {
+  position: relative;
+  box-shadow: 0 0px 12px rgba(0,0,0,0.08);
+}
+
+.members-image-wrap {
+  position: relative;  // ← обов'язково
+  overflow: hidden;
+
+ 
+  
+}
+
+.members-text {
+  position: absolute;
+  text-align: right;
+  bottom: 0;
+  right: -7px;     // ← справа всередині фото
+  left: auto;
+  background: var(--c-white);
+  padding: 20px 40px;
+  border-radius: 8px;
+  z-index: 2;
+
+   &::before {
+      content: var(--icon-share);
+      position: absolute;
+      overflow: visible;
+      bottom: 15px;
+      right: 87%;
+      width: 50px;
+      height: 50px;
+      background-color: var(--c-green);
+      color: #fff;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+   &_title {
+    min-width: 118px;
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--c-dark);
+    margin: 0;
+  }
+
+  &_role {
+    font-size: 13px;
+    color: var(--c-gray);
+    margin: 0;
+  }
+}

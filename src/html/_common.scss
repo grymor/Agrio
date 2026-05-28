@@ -1,0 +1,63 @@
+.icon{
+display: flex;
+gap: 10px;
+align-items: center;
+&::before{
+    content:'';
+    width: 30px;
+    height: 30px;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: var(--c-green);
+    transition: background-color 0.3s ease-in-out;
+}
+}
+
+.icon-location{
+&::before{
+    mask-image: var(--icon-location);
+ }
+}
+.icon-phone{
+&::before{
+    mask-image: var(--icon-phone);
+ }
+}
+
+// .icon-fb{
+// &::before{
+//     mask-image: var(--icon-facebook);
+//  }
+// }
+
+.icon-mail{
+&::before{
+    mask-image: var(--icon-mail);
+ }
+}
+
+// .icon-x{
+// &::before{
+//     mask-image: var(--icon-x);
+//  }
+// }
+
+// .icon-instagram{
+// &::before{
+//     mask-image: var(--icon-instagram);
+//  }
+// }
+
+.title{
+    font-family: var(--ff-secondary);
+    font-size: 120px;
+    line-height: 110px;
+    text-transform: uppercase;
+}
+
+.text{
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 400;
+}

@@ -1,0 +1,208 @@
+@use "../../../styles/mixins/"as*;
+
+.footer {
+
+    background-color: #24231D;
+   
+
+    font-weight: 300;
+        font-size: 14px;
+        line-height: 20px;
+        color: #A5A49A;
+
+    &_grid{
+        display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 40px;
+    }
+}
+
+.footer-top{
+ padding: 120px 0;
+}
+
+.footer-details {
+    .logo {
+        display: block;
+        margin-bottom: 21px;
+    }
+    &_text {
+        margin-bottom: 21px;
+    }
+}
+
+
+.footer-title {
+font-weight: 500;
+font-size: 20px;
+line-height: 36px;
+color: var(--c-white);
+margin-bottom: 32px;
+position: relative;
+  display: inline-block;
+  margin-bottom: 32px;
+
+&::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 45px;
+    height: 4px;
+    background: var(--c-green);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50px;
+    bottom: -10px;
+
+    width: 4px;
+    height: 4px;
+    background: var(--c-green);
+    border-radius: 50%;
+  }
+}
+
+
+.footer-menu{
+
+    text-transform: inherit;
+    
+
+    &_list{
+        .li{
+        margin-bottom: 10px;
+        }
+        font-weight: 500;
+        font-size: 15px;
+        display: grid;
+        
+    }
+
+    &_link {
+        display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+    @include hover{
+        color: var(--c-green);
+    }
+
+
+  
+&::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background: var(--icon-leaf);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+    }
+
+}
+
+
+.footer-news{
+  &_item{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  }
+  &_link{
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    @include hover{
+        color: var(--c-green);
+  }
+}
+}
+
+
+
+.contacts {
+  margin-bottom: 10px;
+    &_list {
+        &:not(:last-child){
+            margin-bottom: 15px;
+        }
+    
+}
+    &_link {
+        transition: ease-in-out 0.3s;
+        @include hover{
+            color: var(--c-green);
+        }
+    }
+}
+
+
+
+.subscribe-form {
+    margin-bottom: 20px;
+    &_group {
+display: flex;
+align-items: center;
+border-radius: 9px;
+border: 1px solid rgba(#fff, 0.6);
+}
+
+&_input{
+    width: 100%;
+    padding: 16px;
+    outline: 0;
+    background-color: var(--c-white);
+}
+&_btn {
+    width: 50px;
+    height: 50px;
+padding: 18px 19px;
+mask-image: var(--icon-email);
+mask-repeat: no-repeat;
+mask-size: 24px;
+mask-position: center;
+background-color: var(--c-white);
+transition: background-color 0.3s ease-in-out;
+    @include hover{
+        background-color: var(--c-green);
+    }
+}
+
+}
+
+.footer-bottom {
+
+  background-color: var(--c-dark);
+  padding: 10px 0;
+  font-size: 12px;
+
+  &_grid{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &_copy {
+    color: var(--c-gray);
+  }
+
+  &_legal {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    a {
+      color: var(--c-gray);
+      text-decoration: none;
+    }
+
+    a + a::before {
+      content: "|";
+      margin-right: 12px;
+      color: var(--c-gray);
+    }
+  }
+}

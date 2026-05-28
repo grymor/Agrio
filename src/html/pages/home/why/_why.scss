@@ -1,0 +1,111 @@
+@use '../../../../styles/mixins'as*;
+
+.intro_inner {
+    display: flex;
+    align-items: center; // щоб фото тягнулось по висоті
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.why_image-wrapper {
+    position: relative;
+    flex: 0 0 54%;
+    aspect-ratio: 700/800;
+    background-image: url('/src/assets/images/home/whyfields.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    // прибери aspect-ratio — висота тепер береться від контенту справа
+    .why_badge {
+    position: absolute;
+    top: 25%;
+    right: 10%;
+    
+    width: 306px;
+    height: 168px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    
+    padding: 20px 30px;
+    background-color: var(--c-yellow);
+    
+    font-family: "CoveredByYourGrace", sans-serif;;
+    font-size: 30px;
+    color: white;
+    line-height: 36px;
+    text-align: start;
+
+    .comment {
+        max-width: 125px;
+    }
+    
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -20px;
+        right: 0;
+        border-right: 20px solid var(--c-yellow);
+        border-bottom: 20px solid transparent;
+    }
+}
+}
+
+.content {
+    flex: 1;
+    min-width: 0;
+
+}
+
+.about_text {
+    padding-top: 30px;
+    max-width: 440px;
+}
+
+.why-list{
+    .why-item{
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        margin-top: 23px; 
+
+        &::before{
+            content: "";
+            display: block;
+            width: 40px;
+            height: 40px;
+            mask-image: url(/src/assets/icons/icon-check.svg);
+            mask-size: contain;
+        }
+
+    &:nth-child(1)::before { background-color: var(--c-green) }
+    &:nth-child(2)::before { background-color: var(--c-lightgreen) }
+    &:nth-child(3)::before { background-color: var(--c-yellow) }
+        }
+
+        .why-content{
+            display: flex;
+        flex-direction: column;
+
+    .why-description{
+
+        font-size: 24px;
+    font-weight: 800;
+    color: var(--c-dark);
+    }
+
+    .why-text{
+        max-width: 350px;
+      font-size: 16px;
+      line-height: 30px;
+      color: var(--c-gray);
+    }
+}
+    
+
+}
+
+.btn-group {
+    margin-top: 30px;
+}

@@ -1,0 +1,144 @@
+@use '../../../../styles/mixins'as*;
+
+.intro{
+padding: 390px 0;
+z-index: 1;
+overflow: hidden;
+
+    &_inner{
+        display: flex;
+        align-items: center;
+    justify-content: space-between;
+    gap: 65px;
+    }
+
+    .title {
+      font-size: 24px;
+      color: var(--c-yellow);
+      text-transform: capitalize;
+      &--no-margin {
+        margin-bottom: 0;
+        line-height: 1; // Цей клас просто вимикає одну властивість
+    }
+    }
+    .content{
+      padding-top: 75px;
+      padding-bottom: 75px;
+        max-width: 600px;
+    }
+}
+.about_images{
+  position: relative;
+  min-height: 550px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 120px;
+  padding-top: 50px;
+}
+    // Головне велике коло з трактором
+.about_image-wrapper--main {
+  width: 550px;           // Бажаний розмір
+  height: 550px;
+  border-radius: 50%;     // Робимо ідеальне коло
+  overflow: hidden;       // Ховаємо все, що виступає за межі кола
+  position: relative;
+
+  .about_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    // Картинка заповнить коло, не втрачаючи пропорцій
+  }
+}
+
+// Маленьке коло з помідорами (те, що накладається)
+.about_image-wrapper--small {
+  width: 260px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+  
+  
+  border: 10px solid var(--c-white); // Біла рамка, як на макеті
+  
+  position: absolute;      // Ставимо поверх великого кола
+  bottom: 55px;            // Зміщуємо вниз
+  left: -50px;            // Зміщуємо, щоб воно "виглядало" збоку
+  
+  .about_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.about{
+        font-size: 48px;
+        line-height: 58px;
+    font-weight: 800;
+    color: var(--c-dark);
+}
+
+.about_description{
+    margin-top: 30px;
+    margin-bottom: 33px;
+    font-size: 26px;
+    line-height: 30px;
+    font-weight: 800;
+    color: var(--c-green);
+}
+
+.about_text{
+    max-width: 525px;
+    font-size: 16px;
+    line-height: 30px;
+    margin-bottom: 41px;
+    color: var(--c-gray);
+}
+
+.grow-group{
+  display: flex;            // Змінюємо grid на flex              // Тепер це єдина реальна відстань між блоками
+  justify-content: flex-start; // Притискаємо їх до лівого краю
+  list-style: none;
+  width: fit-content;
+  margin-bottom: 30px;
+  gap: 20px;                  // Відстань між блоками (можна налаштувати)
+  li{
+  display: flex;
+  align-items: center;               // Відстань між іконкою та текстом
+  
+        }
+        &_growtitle{
+          max-width: 160px;
+            margin-left: 20px;
+            font-size: 20px;
+            line-height: 28px;
+            font-weight: 800;
+            color: var(--c-dark);
+        }
+}
+
+.grow-bottom{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 30px;
+    color: var(--c-dark);
+    margin-bottom: 40px;
+
+    .intro-bottom{
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    &::before{
+            content: "";
+            display: block;
+            width: 16px;
+            height: 16px;
+            background: var(--icon-check);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+      }
+
+}
+
