@@ -1,0 +1,74 @@
+.map {
+
+.container {
+    height: auto;
+    padding-bottom: 120px;
+    // display: block;
+  }
+
+
+
+  .title {
+      font-size: 24px;
+      color: var(--c-yellow);
+      text-transform: capitalize;
+      &--no-margin {
+        margin-bottom: 0;
+        line-height: 1; // Цей клас просто вимикає одну властивість
+    }
+    }
+
+    .about{
+        font-size: 48px;
+        line-height: 58px;
+    font-weight: 800;
+    color: var(--c-dark);
+}
+
+  .request-form {
+    padding: 100px 100px;
+    background-color: var(--color-background);
+    // background-image: url('../../../../assets/images/contacts/div.elementor-widget-wrap.webp');
+    background-size: cover;
+  background-position: center;
+  align-items: center;
+
+  &_body {
+    padding-top: 30px;
+  }
+
+  &_group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 20px;
+  }
+
+  &_text {
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+  }
+
+  &_input {
+    width: 100%;
+    font-size: 14px;
+    padding: 20px 31px;
+    border-radius: 10px;
+    background-color: var(--c-white);
+  }
+
+  &_textinput {
+    width: 100%;
+    font-size: 14px;
+    padding: 16px 31px;
+    border-radius: 10px;
+    background-color: var(--c-white);
+    min-height: 150px;
+    vertical-align: top;
+  }
+}
+  }

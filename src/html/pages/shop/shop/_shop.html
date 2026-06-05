@@ -1,0 +1,35 @@
+<section class="shop">
+    <div class="container shop__inner">
+        <aside class="shop__sidebar" aria-label="Sidebar">
+        <div class="sidebar-widget-search">
+  <div class="search-widget">
+    <input type="text" class="search-input" placeholder="Search products…">
+  </div>
+</div>
+          <!-- Price -->
+ <div class="shop-sidebar-widget">
+  <h3 class="sidebar-widget__title">Price</h3>
+  <div class="price-range">
+    <div class="price-range__slider" id="priceSlider"></div>
+    <div class="price-range__values">
+      <span>$<span id="priceMin">20</span></span>
+      <span>$<span id="priceMax">500</span></span>
+    </div>
+    <button class="btn btn-green">Apply</button>
+  </div>
+</div>
+
+  <!-- Categories -->
+  <div class="shop-sidebar-widget">
+    <h3 class="sidebar-widget__title">Categories</h3>
+    <ul class="shop-sidebar-categories">
+    </ul>
+  </div>
+      </aside>
+
+      <main class="shop__content" aria-label="Shop Content">
+        <div class="shop-list"></div>
+        <nav class="pagination" aria-label="Pagination">…</nav>
+      </main>
+    </div>
+</section>

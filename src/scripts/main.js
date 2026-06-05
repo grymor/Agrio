@@ -1,5 +1,6 @@
 import '../styles/main.scss';
 import './posts.js';
+import './products.js';
 
 
 const headerEl = document.querySelector(".header");
