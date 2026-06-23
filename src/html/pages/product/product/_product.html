@@ -1,0 +1,86 @@
+<section class="product">
+  <div class="container product__inner">
+
+    <div class="product__top">
+      <div class="product__gallery">
+        <img class="product__image" src="" alt="">
+      </div>
+
+      <div class="product__details">
+        <div class="product__header">
+          <h1 class="product__title"></h1>
+          <span class="product__price"></span>
+        </div>
+
+        <p class="product__reviews-count"></p>
+
+        <p class="product__description"></p>
+
+        <div class="product__quantity">
+          <span class="product__quantity-label">Choose Quantity</span>
+          <div class="quantity-control">
+            <input type="number" class="quantity-control__input" value="1" min="1">
+            <div class="quantity-control__arrows">
+              <button class="quantity-control__btn quantity-control__btn--up" type="button" aria-label="Increase quantity">+</button>
+              <button class="quantity-control__btn quantity-control__btn--down" type="button" aria-label="Decrease quantity">−</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product__actions">
+          <button class="btn btn--green product__add-to-cart">Add to cart</button>
+          <button class="btn btn--yellow product__add-to-wishlist">Add to wishlist</button>
+        </div>
+
+        <div class="product__share">
+          <span class="product__share-label">Share with Friends</span>
+          <include src="html/components/social/_index.html"></include>
+        </div>
+      </div>
+    </div>
+
+    <div class="product__description-block">
+      <h2 class="product__section-title">Description</h2>
+      <p class="product__description-text"></p>
+      <p class="product__description-text"></p>
+    </div>
+
+    <div class="product__reviews">
+      <h2 class="product__section-title product__reviews-title"></h2>
+
+      <div class="review-list">
+        
+      </div>
+
+      <div class="review-form">
+        <h3 class="review-form__title">Add a review</h3>
+
+        <label class="review-form__remember">
+          <input type="checkbox" id="rememberReview" name="remember">
+          <span>Save my name, email, and website in this browser for the next time I comment.</span>
+        </label>
+
+        <div class="review-form__field review-form__rating">
+          <span class="review-form__label">Your rating</span>
+          <!-- зірки рейтингу, якщо потрібні -->
+        </div>
+
+        <div class="review-form__field">
+          <textarea class="review-form__textarea" placeholder="Your Review..."></textarea>
+        </div>
+
+        <div class="review-form__row">
+          <div class="review-form__field">
+            <input type="text" class="review-form__input" placeholder="Your Name">
+          </div>
+          <div class="review-form__field">
+            <input type="email" class="review-form__input" placeholder="Email Address">
+          </div>
+        </div>
+
+        <button class="btn btn--green review-form__submit" type="submit">Submit Review</button>
+      </div>
+    </div>
+
+  </div>
+</section>

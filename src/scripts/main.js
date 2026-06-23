@@ -1,6 +1,12 @@
 import '../styles/main.scss';
 import './posts.js';
 import './products.js';
+import './post.js';
+import { updateCartCount, initCartButton } from './cart.js';
+import './cart-page.js';
+import './product-page.js';
+
+
 
 
 const headerEl = document.querySelector(".header");
@@ -29,3 +35,7 @@ new Swiper('.testimonials .swiper', {
   slidesPerView: 2,
   loop: true,
 });
+
+// ===== КОШИК =====
+updateCartCount();
+initCartButton();

@@ -1,0 +1,175 @@
+.post {
+    padding-top: 120px;
+    padding-bottom: 120px;
+
+  .container {
+    height: auto;
+    // display: block;
+  }
+
+  .post__inner {
+    display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  }
+  
+}
+
+
+
+
+.post_text {
+padding-top: 11px;
+        max-width: 765px;
+      font-size: 16px;
+      line-height: 30px;
+      color: var(--c-gray);
+  margin-bottom: 52px;
+      p {
+        margin-bottom: 30px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+      }
+
+.request-form_remember {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+
+  input[type="checkbox"] {
+    flex-shrink: 0;
+    width: 1rem;
+    height: 1rem;
+    margin-top: 0.15rem;
+    cursor: pointer;
+    appearance: auto; // скидає будь-який reset що міг сховати чекбокс
+  }
+}
+
+.post-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--color-border);
+  padding-top: 30px;
+}
+
+.post__tags-wrap {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  .post__tags-label{
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--c-dark);
+  }
+}
+
+.post-tag {
+  background: var(--c-green);
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.post__navigation {
+  display: flex;
+  gap: 30px;
+  margin-top: 40px;
+
+  &-item {
+    flex: 1;
+    display: block;
+    padding: 50px 53px;
+    background-color: #f9f7f2; // кремовий фон як на макеті
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 20px;
+    color: #1a1a1a;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: var(--color-border);
+    }
+
+    &--prev {
+      text-align: left;
+    }
+
+    &--next {
+      text-align: right;
+    }
+
+    &--empty {
+      pointer-events: none;
+      visibility: hidden;
+    }
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
+}
+
+.request-form {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--c-white);
+    align-items: flex-start;
+    padding-top: 45px;
+
+    .about {
+      font-size: 26px;
+    }
+
+    &_remember {
+      padding-top: 20px;
+    }
+
+  &_body {
+    padding-top: 5px;
+  }
+
+  &_group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 20px;
+  }
+
+  &_text {
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+  }
+
+  &_input {
+    width: 100%;
+    font-size: 14px;
+    padding: 20px 31px;
+    border-radius: 10px;
+    background-color: var(--color-background);
+  }
+
+  &_textinput {
+    width: 100%;
+    font-size: 14px;
+    padding: 16px 31px;
+    border-radius: 10px;
+    background-color: var(--color-background);
+    min-height: 150px;
+    vertical-align: top;
+  }
+}

@@ -1,4 +1,5 @@
 import { products, shopCategories} from './data/products.js';
+import { addToCart } from './cart.js';
 import * as noUiSlider from 'nouislider';
 import 'nouislider/dist/nouislider.css';
 
@@ -32,7 +33,7 @@ function renderproducts() {
       <a href="${product.url}" class="product-card__title">${product.title}</a>
       <p class="product-card__price">$${product.price.toFixed(2)}</p>
       </div>
-        <button class="product-card__btn btn" data-id="${product.id}">Add to Cart</button>
+        <button class="product-card__btn btn js-add-to-cart" data-product-name="${product.title}">Add to Cart</button>
     </div>
   </article>
   `).join('');
@@ -44,8 +45,8 @@ productsContainer.addEventListener('click', (e) => {
   const btn = e.target.closest('.product-card__btn');
   if (!btn) return;
 
-  const id = Number(btn.dataset.id);
-  const product = products.find(p => p.id === id);
+  const productName = btn.dataset.productName;
+  const product = products.find(p => p.title === productName);
 
   addToCart(product);
 });

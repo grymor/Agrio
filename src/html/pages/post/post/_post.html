@@ -1,0 +1,63 @@
+<section class="post">
+  <div class="container post__inner">
+
+    <main class="post__content">
+      <div class="post__img-wrap">
+        <img class="post__image" src="" alt="">
+        <span class="post-date"></span>
+      </div>
+      <div class="news-meta">
+        <p class="author"></p>
+        <p class="comments"></p>
+      </div>
+      <h1 class="post-description"></h1>
+      <div class="post_text"></div>
+      <div class="post-bottom">
+          <div class="post__tags-wrap">
+    <span class="post__tags-label">Tags</span>
+    <div class="post__tags"></div>
+  </div>
+    <include src="html/components/social/_index.html"></include>
+    </div>
+      <nav class="post__navigation"></nav>
+       <form action="" class="request-form">
+            <h1 class="about">Leave a Comment</h1>
+
+            <label class="request-form_remember">
+  <input type="checkbox" id="rememberMe" name="remember">
+  <span>Save my name, email, and website in this browser for the next time I comment.</span>
+</label>
+
+<div class="request-form_body">
+<div class="request-form_group">
+  <div class="request-form_field">
+    <label for="request[name]" class="request-form_label sr-only">Full Name</label>
+    <input type="text" class="request-form_input" id="request[name]" name="request[name]" placeholder="Full Name" required>
+    </div>
+    <div class="request-form_field">
+    <label for="request[email]" class="request-form_label sr-only">Email Address</label>
+    <input type="text" class="request-form_input" id="request[email]" name="request[email]" placeholder="Email Address" required>
+    </div>
+</div>
+<div class="request-form_text">
+    <label for="request[message]" class="request-form_label sr-only">Write Comment</label>
+    <textarea 
+    class="request-form_textinput" 
+    id="request[message]" 
+    name="request[message]" 
+    placeholder="Write a Comment" 
+    required
+  ></textarea>
+</div>
+<button class="btn request-form_btn">Post Comment</button>
+</div>
+</form> 
+    </main>
+   
+
+
+
+    <include src="html/components/sidebar/_index.html"></include>
+
+  </div>
+</section>

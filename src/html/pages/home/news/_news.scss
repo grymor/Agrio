@@ -37,8 +37,6 @@
 // Обгортка картинки — overflow: hidden тільки тут
 .news-image-wrap {
   position: relative;
-  
-  
 
   img {
     width: 100% ;
@@ -47,6 +45,7 @@
     object-position: center;
     display: block;
   }
+
 }
 
 // Бейдж виступає знизу картинки
